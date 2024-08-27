@@ -13,6 +13,11 @@ const uint PWM_PIN = 2;
 const float PWM_FREQUENCY = 50.0;
 
 int main() {
+
+    gpio_init(PICO_DEFAULT_LED_PIN); 
+    gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT); 
+    gpio_put(PICO_DEFAULT_LED_PIN, 1);
+
     stdio_init_all();
 
     // Initialize the ADC
