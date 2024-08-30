@@ -8,13 +8,16 @@ p0 = PWM(p0)
 p1 = Pin(1)
 p1 = PWM(p1)
 
-p0.freq(70)
-p0.duty_u16(3227) # 50% duty cycle... max is 65535
-sleep(5)
+p0.freq(100)
+p1.freq(100)
+p0.duty_u16(6800) 
+p1.duty_u16(6800)
+print("Set to low!")
+sleep(10)
 
-max = 6000
+max = 16384
 
-for i in range(5000, max):
+for i in range(6800, max):
     print(i)
     sleep(0.01)
     p0.duty_u16(i)
@@ -22,7 +25,7 @@ for i in range(5000, max):
     
 sleep(1)
 
-for i in range(max, 5000, -1):
+for i in range(max, 6800, -1):
     print(i)
     sleep(0.01)
     p0.duty_u16(i)

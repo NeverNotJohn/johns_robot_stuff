@@ -9,15 +9,18 @@ p1 = Pin(1)
 p1 = PWM(p1)
 
 # 32768
+# 16384
+# Min = 3227
+
 
 def calibrate(pin_array):
     print("Calibration started...")
     for pin in pin_array:
-        pin.freq(70)
-        pin.duty_u16(8000)
-    sleep(8)
+        pin.freq(100)
+        pin.duty_u16(13107)
+    sleep(5)
     for pin in pin_array:
-        pin.duty_u16(3227)
+        pin.duty_u16(6554)
     # Unplug the battery and plug it back in
     print("Calibration finished!")
 
